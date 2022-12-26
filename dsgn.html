@@ -149,6 +149,7 @@
 		background-color: transparent;
 		outline: none;
 	}
+
 	._error{
 		border-bottom: 1px solid red;
 	}
@@ -328,23 +329,23 @@
 		   	<a href="#cntcts" class="contacts">Контакти</a>
 		   </div>
 	   </div>
-	<div class="popup" id="mypopup">
+	   <div class="popup" id="mypopup">
 		<div class="popup_content">
 			<div class="popup_header">
 				<span class="close">&times;</span>
 				<h1>Оформлення замовлення</h1>
 			</div>
 			<div class="popup_body">
-				<form>
-					<p><label for="name">ПІБ<em>*</em></label><input type="text" id="name"></p>
-					<p><label for="email">Email<em>*</em></label><input type="text" id="email"></p>
-					<p><label for="phone">Номер телефону<em>*</em></label><input type="text" id="phone"></p>
+				<form id="form">
+					<p><label for="name">ПІБ<em>*</em></label><input type="text" class="_req" name="name" id="name"></p>
+					<p><label for="email">Email<em>*</em></label><input type="text" class="_req _email" name="emeil" id="email"></p>
+					<p><label for="phone">Номер телефону<em>*</em></label><input type="text" class="_req" name="phon" id="phone"></p>
 					<p>
 					<h1>Класифікація замовлення:</h1>
-					<label for="chk1">Front-end</label><input type="checkbox" id="chk1">
-					<label for="chk2">Back-end</label><input type="checkbox" id="chk2">
-					<label for="chk3">Дизайн</label><input type="checkbox" id="chk3">
-					<label for="chk4">Анімація</label><input type="checkbox" id="chk4">
+					<label for="chk1">Front-end</label><input type="checkbox" name="chk_1" id="chk1">
+					<label for="chk2">Back-end</label><input type="checkbox" name="chk_2" id="chk2">
+					<label for="chk3">Дизайн</label><input type="checkbox" name="chk_3" id="chk3">
+					<label for="chk4">Анімація</label><input type="checkbox" name="chk_4" id="chk4">
 					</p>
 					<p><label for="textarea">
 							<h1>Опишіть суть замовлення:</h1>
@@ -355,6 +356,8 @@
 				</form>
 			</div>
 		</div>
+	</div>
+	<div class="banner" id="baner"> 
 	</div>
 	   <!--Нижние блоки и футер-->
 	<div class="pg">
