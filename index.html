@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	
+	}
+	@keyframes animh1 {
+		from {
+			transform: translateY(-70px);
+		}
+		to {
+			transform: translateY(0px);
+		}
+	}
+
+	@keyframes animatetop {
+		from {
+			transform: translateY(-300px);
+		}
+		to {
+			transform: translateY(0px);
+		}
+	}
+
+	.mask{
+    	width: 100%;
+    	height: 100%;
+		background-color: black;
+        position: fixed;
+    	top: 0;
+    	z-index: 100;
+    	transition: 0.6s;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+		}
+
+	.loader{
+		width: 690px;
+		height: 388px;
+		background-image: url('titanim.gif');
+	}
+
+	.hide{
+    	opacity: 0;
+		}
+	
+	.maincontent {
+		display: flex;
+		flex-direction: column;
+	}
+	.header {
+		display: flex;
+		align-items: center;
+		background-color: black;
+	}
+	.logo {
+		width: 350px;
+		height: 150px;
+	}
+	.logoimg {
+		margin-top: 35px;
+		margin-left: 30px;
+	}
+	.lang {
+		margin-left: 307px;
+	}
+	.pages {
+		margin-left: 150px;
+	}
+	#ua {
+		margin-right: 10px;
+		color: yellow;
+		font-family: "Century Gothic";
+	}
+	#ua:hover {
+		color: white;
+	}
+	#eng:hover {
+		color: white;
+	}
+	#eng {
+		color: yellow;
+		font-family: "Century Gothic";
+	}
+	.home,
+	.whyus,
+	.price,
+	.contacts {
+		font-size: 20px;
+		margin-right: 50px;
+		color: white;
+		text-decoration: none;
+		font-family: "Century Gothic";
+	}
+	.home:hover,
+	.whyus:hover,
+	.price:hover,
+	.contacts:hover {
+		color: grey;
+		text-decoration: underline;
+	}
+
+	.popup{
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .popup_content{
+        position: relative; 
+		background-color: white;
+        margin: auto;
+        margin-top: 155px;
+        border: 1px solid #888;
+        width: 430px;
+		padding: 35px;
+		border-radius: 10px;
+		font-family: "Century Gothic";
+		letter-spacing: 1px;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+	.close{
+		cursor: pointer;
+	}
+
+	h1 {
+		font-family: "Century Gothic";
+		font-size: 20px;
+	}
+
+	label {
+		font-family: "Century Gothic";
+		top: 0;
+		z-index: -1;
+		color: #9e9e9e;
+		transition: 0.3s;
+	}
+
+	._error{
+		box-shadow: 0 0 15px red;
+	}
+
+	em {
+		color: red;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px solid #e0e0e0;
+		background-color: transparent;
+		outline: none;
+	}
+
+	button {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		color: #fff;
+		background-color: #0071f0;
+		font-family: "Century Gothic";
+		outline: none;
+		cursor: pointer;
+	}
+
+	button:focus,
+	button:hover {
+		background-color: rgba(0, 113, 240, 0.7);
+	}
+
+	textarea {
+		border: none;
+		border-bottom: 1px solid #e0e0e0;
+		background-color: transparent;
+		outline: none;
+	}
+
+	.banner {
+		display: none;
+		width: 700px;
+		height: 300px;
+		border-radius: 3%;
+		background-image: url("titbanner.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 700px auto;
+	}
+
+	.pg {
+		display: flex;
+		flex-direction: column;
+	}
+	.pg1 {
+		display: flex;
+		width: 100%;
+		background-image: url("bgitech.jpg");
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	.text1 {
+		width: 600px;
+		height: 570px;
+		margin-top: 50px;
+		margin-left: 30px;
+		background: rgba(0, 0, 0, 0.8);
+		padding: 10px 20px 10px 20px;
+	}
+	.img1 {
+		width: 500px 200px;
+		margin-left: 200px;
+		margin-top: 200px;
+	}
+	.h1 {
+		font-size: 65px;
+		font-family: "Century Gothic";
+		animation-name: animh1;
+		animation-duration: 3s;
+		color: white;
+		margin-bottom: 30px;
+		color: white;
+	}
+	
+	.p1 {
+		font-size: 30px;
+		font-family: "Century Gothic";
+		color: white;
+	}
+	.pg2 {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: black;
+	}
+	.img2 {
+		margin-top: 10px;
+	}
+	.h2p2 {
+		margin-top: 50px;
+	}
+	.b1,
+	.b2,
+	.b3,
+	.b4 {
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		border-radius: 2%;
+		margin-bottom: 47px;
+	}
+	.b1img {
+		width: 300px;
+		height: 250px;
+		text-align: inherit;
+		margin-top: 35px;
+	}
+	.b2img {
+		width: 300px;
+		height: 250px;
+		margin-top: 35px;
+	}
+	.b3img {
+		width: 300px;
+		height: 250px;
+		margin-top: 35px;
+	}
+	.b4img {
+		width: 300px;
+		height: 250px;
+		margin-bottom: 35px;
+	}
+	.b1t,
+	.b2t,
+	.b3t,
+	.b4t {
+		font-size: 35px;
+		font-family: "Century Gothic";
+		color: black;
+	}
+	.href1 {
+		display: inline-block;
+		padding: 16px;
+		background-color: #FFDE59;
+		margin-top: 50px;
+		font-size: 25px;
+		font-family: "Century Gothic";
+		text-decoration: none;
+		color: black;
+		border-radius: 7%;
+	}
+	.href1:hover {
+		text-decoration: underline;
+		color: white;
+	}
+	.h2 {
+		font-size: 65px;
+		font-family: "Century Gothic";
+		color: white;
+		margin-bottom: 75px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.uslugi {
+		display: flex;
+		justify-content: space-around;
+		padding-bottom: 70px;
+		color: white;
+	}
+	.poslugiimg {
+		border-radius: 2%;
+	}
+	.poslugi {
+		margin-bottom: 150px;
+
+	}
+	.pg3 {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: black;
+		justify-content: space-around;
+	}	
+	.pg3div {
+		display: flex;
+	}
+	.text2 {
+		width: 700px;
+		height: 570px;
+		margin-top: 50px;
+		margin-left: 350px;
+		padding: 10px 20px 10px 20px;
+		padding-bottom: 57px;
+	}
+	.p2 {
+		font-size: 30px;
+		font-family: "Century Gothic";
+		color: white;
+	}
+	.footer {
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		background-color: #FFDE59;
+	}
+	.f1 {
+		display: flex;
+		flex-direction: column;
+		height: 250px;
+		margin-top: 30px;
+		margin-left: 50px;
+
+	}
+	h3 {
+		font-family: "Century Gothic";
+		font-size: 40px;
+		margin-bottom: 23px;
+	}
+	.pfoot {
+		font-family: "Century Gothic";
+		font-size: 20px;
+	}
+	.instimg {
+		margin-top: 20px;
+	}
+	.f2 {
+		width: 350px;
+		height: 30px;
+		font-family: "Century Gothic";
+		font-size: 20px;
+		text-align: center;
+		color: #9D7E00;
+
+	}
+	.f3 {
+		width: 300px;
+		height: 100px;
+		background-image: url("titlogo.png");
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+
+	}
+	.vidgetimg {
+		cursor: pointer;
+		border-radius: 50%;
+	}
+	.vidget {
+		display: flex;
+		position: fixed;
+        z-index: 99;
+        right: 40px;
+        bottom: 40px;
+        align-items: center;
+
+	}
+	.vidgetp {
+		font-family: "Century Gothic";
+		color: white;
+		font-size: 15px;
+		margin-right: 20px;
+		padding: 10px 5px 10px 5px;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	</style>
+</head>
+<body>
+    <div class="mask">
+        <div class="loader"></div>
+    </div>
+	<div class="maincontent">
+	    <div class="header">
+		   <div class="logo"><img class="logoimg" src="titlogo.png" width="300"></div>
+		   <div class="lang">
+	       	<a href="" id="ua">UA</a>
+	       	<a href="" id="eng">ENG</a>
+	       </div>
+		   <div class="pages">
+		   	<a href="trident.html" class="home">Головна</a>
+		   	<a href="#h2" class="whyus">Послуги</a>
+		   	<a href="#h3" class="price">Про нас</a>
+		   	<a href="#cntcts" class="contacts">Контакти</a>
+		   </div>
+	   </div>
+	   <!--Форма заказа-->
+	    <div class="popup" id="mypopup">
+	    	<div class="popup_content">
+	    		<div class="popup_header">
+	    			<span class="close">&times;</span>
+	    			<h1>Оформлення замовлення</h1>
+	    		</div>
+	    		<div class="popup_body">
+	    			<form id="form">
+	    				<p><label for="name">ПІБ<em>*</em></label><input type="text" class="_req" name="name" id="name"></p>
+	    				<p><label for="email">Email<em>*</em></label><input type="text" class="_req _email" name="emeil" id="email"></p>
+	    				<p><label for="phone">Номер телефону<em>*</em></label><input type="text" class="_req" name="phon" id="phone"></p>
+	    				<p>
+	    				<h1>Класифікація замовлення:</h1>
+	    				<label for="chk1">Front-end</label><input type="checkbox" name="chk_1" id="chk1">
+	    				<label for="chk2">Back-end</label><input type="checkbox" name="chk_2" id="chk2">
+	    				<label for="chk3">Дизайн</label><input type="checkbox" name="chk_3" id="chk3">
+	    				<label for="chk4">Анімація</label><input type="checkbox" name="chk_4" id="chk4">
+	    				</p>
+	    				<p><label for="textarea">
+	    						<h1>Опишіть суть замовлення:</h1>
+	    					</label>
+	    					<textarea id="textarea"></textarea>
+	    				</p>
+	    				<button id="form_leat">Замовити</button>
+	    			</form>
+	    		</div>
+	    	</div>
+	    </div>
+		<!--Уведомление после заказа-->
+		<div class="banner" id="baner"> 
+		</div>
+	   <!--Нижние блоки и футер-->
+	<div class="pg">
+	   <div class="pg1">
+	<div class="text1">
+	   <h1 class="h1">Чому саме ми?</h1>
+	   <p class="p1">Наші фахівці є найкращими випусниками  учбових IT-закладів,де відточували майстерність верстки сайтів та дизайну на практиці.</p>
+	   <p class="p1">Вони дуже добре володіють мовами програмування, такими як: HTML, CSS, JS та Python</p>
+	</div>
+	<div class="img1"><img src="htmlcss.png" width="500px"></div>
+	   </div>
+	   <div class="pg2">
+	   	<h1 class="h2" id="h2">Наші послуги</h1>
+	   	<div class="uslugi">
+	   		<div class="b1"><div class="b1img"><img src="fend.png" width="200" class="img2"></div><div class="b1t">Front-end</div><a href="frontend tit.html" class="href1">Дізнатися більше</a></div>
+	   		<div class="b2"><div class="b2img"><img src="bnd.png" width="200" class="img2"></div><div class="b2t">Back-end</div><a href="backendtit.html" class="href1">Дізнатися більше</a></div>
+	   		<div class="b3"><div class="b3img"><img src="dsgn.png" width="270"></div><div class="b3t">Дизайн</div><a href="dsgn.html" class="href1">Дізнатися більше</a></div>
+	   		<div class="b4"><div class="b4img"><img src="t9k.gif" width="250"></div><div class="b4t">Анімації</div><a href="animationpage.html" class="href1">Дізнатися більше</a></div>
+	   	</div>
+	   	<div class="poslugi"><img src="poslugabtn.png" class="poslugiimg" id="btn" width="300"></div>
+	   </div>
+	   <div class="pg3">
+	   	<h1 class="h2" id="h3">Про нас</h1>
+	   	<div class=" pg3div">
+	   	<img src="tit.png" class="titpng" width="500" height="500">
+	   	<div class="text2">
+
+	   <p class="p2">Ми - молода, але досвідчена українська it-омпанія з Одеси.Ми займаємось розробкою сайтів з найактуальнішим дизайном та функціоналом. Наші дизайнери та програмісти аналізують сучасні тренди у верстці та дизайні сайтів, після чого кропотливою працею створюють якісні сайти-візитки, інтернет-магазини, лендінги, анімації, дизайни логотипів та оформлення, прив'язку back-end функціоналу, та іншу роботу з сайтами та медіа.</p>
+	   </div>
+	</div>
+	</div>
+	<div class="footer">
+		<div class="f1">
+			<h3 id="cntcts">Контакти</h3>
+			<p class="pfoot">Номер телефону: +38 096-(221)-92-38</p>
+			<p class="pfoot">Email: trident.it.ua@gmail.com</p>
+			<div class="social">
+				<a href=""><img src="inst.png" width="70" class="instimg"></a>
+			</div>
+
+		</div>
+		<div class="f2">© 2022 TRIDENT IT</div>
+		<div class="f3"></div>
+	</div>
+	<div class="vidget">
+		<p class="vidgetp">Замовити послуги</p>
+		<img src="vidgetimg.png" class="vidgetimg" id="Btn" width="70">
+	</div>
+	</div>
+	<script src="script.js"></script>
+	<script src="script_form.js"></script>
+
+</body>
+</html>
