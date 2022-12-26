@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	
+	}
+	@keyframes animh1 {
+		from {
+			transform: translateY(-70px);
+		}
+		to {
+			transform: translateY(0px);
+		}
+	}
+
+	.mask{
+    	width: 100%;
+    	height: 100%;
+		background-color: black;
+        position: fixed;
+    	top: 0;
+    	z-index: 100;
+    	transition: 0.6s;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+		}
+
+	.loader{
+		width: 690px;
+		height: 388px;
+		background-image: url('titanim.gif');
+	}
+
+	.hide{
+    	opacity: 0;
+		}
+	
+	.maincontent {
+		display: flex;
+		flex-direction: column;
+	}
+	.header {
+		display: flex;
+		align-items: center;
+		background-color: black;
+	}
+	.logo {
+		width: 350px;
+		height: 150px;
+	}
+	.logoimg {
+		margin-top: 35px;
+		margin-left: 30px;
+	}
+	.lang {
+		margin-left: 307px;
+	}
+	.pages {
+		margin-left: 150px;
+	}
+	#ua {
+		margin-right: 10px;
+		color: yellow;
+		font-family: "Century Gothic";
+	}
+	#ua:hover {
+		color: white;
+	}
+	#eng:hover {
+		color: white;
+	}
+	#eng {
+		color: yellow;
+		font-family: "Century Gothic";
+	}
+	.home,
+	.whyus,
+	.price,
+	.contacts {
+		font-size: 20px;
+		margin-right: 50px;
+		color: white;
+		text-decoration: none;
+		font-family: "Century Gothic";
+	}
+	.home:hover,
+	.whyus:hover,
+	.price:hover,
+	.contacts:hover {
+		color: grey;
+		text-decoration: underline;
+	}
+			.popup{
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .popup_content{
+        position: relative; 
+		background-color: white;
+        margin: auto;
+        margin-top: 155px;
+        border: 1px solid #888;
+        width: 430px;
+		padding: 35px;
+		border-radius: 10px;
+		font-family: "Century Gothic";
+		letter-spacing: 1px;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+	.close{
+		cursor: pointer;
+	}
+
+	h1 {
+		font-family: "Century Gothic";
+		font-size: 20px;
+	}
+
+	label {
+		font-family: "Century Gothic";
+		top: 0;
+		z-index: -1;
+		color: #9e9e9e;
+		transition: 0.3s;
+	}
+
+	em {
+		color: red;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px solid #e0e0e0;
+		background-color: transparent;
+		outline: none;
+	}
+
+	button {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		color: #fff;
+		background-color: #0071f0;
+		font-family: "Century Gothic";
+		outline: none;
+		cursor: pointer;
+	}
+
+	button:focus,
+	button:hover {
+		background-color: rgba(0, 113, 240, 0.7);
+	}
+
+	textarea {
+		border: none;
+		border-bottom: 1px solid #e0e0e0;
+		background-color: transparent;
+		outline: none;
+	}
+	.pg {
+		display: flex;
+		flex-direction: column;
+	}
+	.pg1 {
+		display: flex;
+		width: 100%;
+		background-color: white;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		justify-content: space-around;
+	}
+	.text1 {
+		width: 600px;
+		height: 570px;
+		margin-top: 50px;
+		margin-left: 30px;
+		background: rgba(0, 0, 0, 0.8);
+		padding: 10px 20px 10px 20px;
+	}
+	.img1 {
+		width: 500px 200px;
+		margin-left: 200px;
+		margin-top: 200px;
+	}
+	.h1 {
+		font-size: 65px;
+		font-family: "Century Gothic";
+		animation-name: animh1;
+		animation-duration: 3s;
+		color: white;
+		margin-bottom: 30px;
+		color: white;
+	}
+	
+	.p1 {
+		font-size: 30px;
+		font-family: "Century Gothic";
+		color: white;
+	}
+	.image {
+		width: 500px;
+		height: 500px;
+		background-color: white;
+		background-image: url("bnd.png");
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: center;
+		margin: 63px 0 100px 0;
+		margin-right: px;
+	}
+	.ft {
+		font-family: "Century Gothic";
+		font-size: 47px;
+		margin-top: 450px;
+	}
+	.text {
+		font-family: "Century Gothic";
+		font-size: 30px;
+		width: 500px;
+		height: 300px;
+		background-color: white;
+		text-align: center;
+		margin: 150px 0 100px 0;
+	}
+	.footer {
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		background-color: #FFDE59;
+	}
+	.f1 {
+		display: flex;
+		flex-direction: column;
+		height: 250px;
+		margin-top: 30px;
+		margin-left: 50px;
+
+	}
+	h3 {
+		font-family: "Century Gothic";
+		font-size: 40px;
+		margin-bottom: 23px;
+	}
+	.pfoot {
+		font-family: "Century Gothic";
+		font-size: 20px;
+	}
+	.instimg {
+		margin-top: 20px;
+	}
+	.f2 {
+		width: 350px;
+		height: 30px;
+		font-family: "Century Gothic";
+		font-size: 20px;
+		text-align: center;
+		color: #9D7E00;
+
+	}
+	.f3 {
+		width: 300px;
+		height: 100px;
+		background-image: url("titlogo.png");
+		background-size: 300px auto;
+		background-repeat: no-repeat;
+
+	}
+	.vidgetimg {
+		cursor: pointer;
+		border-radius: 50%;
+	}
+	.vidget {
+		display: flex;
+		position: fixed;
+        z-index: 99;
+        right: 40px;
+        bottom: 40px;
+        align-items: center;
+
+	}
+	.vidgetp {
+		font-family: "Century Gothic";
+		color: white;
+		font-size: 15px;
+		margin-right: 20px;
+		padding: 10px 5px 10px 5px;
+		background-color: rgba(0, 0, 0, 0.5);
+	}
+
+	</style>
+</head>
+<body>
+    <div class="mask">
+        <div class="loader"></div>
+    </div>
+	<div class="maincontent">
+	    <div class="header">
+		   <div class="logo"><img class="logoimg" src="titlogo.png" width="300"></div>
+		   <div class="lang">
+	       	<a href="" id="ua">UA</a>
+	       	<a href="" id="eng">ENG</a>
+	       </div>
+		   <div class="pages">
+		   	<a href="trident.html" class="home">Головна</a>
+		   	<a href="#h2" class="whyus">Послуги</a>
+		   	<a href="#h3" class="price">Про нас</a>
+		   	<a href="#cntcts" class="contacts">Контакти</a>
+		   </div>
+	   </div>
+	<div class="popup" id="mypopup">
+		<div class="popup_content">
+			<div class="popup_header">
+				<span class="close">&times;</span>
+				<h1>Оформлення замовлення</h1>
+			</div>
+			<div class="popup_body">
+				<form>
+					<p><label for="name">ПІБ<em>*</em></label><input type="text" id="name"></p>
+					<p><label for="email">Email<em>*</em></label><input type="text" id="email"></p>
+					<p><label for="phone">Номер телефону<em>*</em></label><input type="text" id="phone"></p>
+					<p>
+					<h1>Класифікація замовлення:</h1>
+					<label for="chk1">Front-end</label><input type="checkbox" id="chk1">
+					<label for="chk2">Back-end</label><input type="checkbox" id="chk2">
+					<label for="chk3">Дизайн</label><input type="checkbox" id="chk3">
+					<label for="chk4">Анімація</label><input type="checkbox" id="chk4">
+					</p>
+					<p><label for="textarea">
+							<h1>Опишіть суть замовлення:</h1>
+						</label>
+						<textarea id="textarea"></textarea>
+					</p>
+					<button id="form_leat">Замовити</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	   <!--Нижние блоки и футер-->
+	<div class="pg">
+	   <div class="pg1">
+	   	<div class="image">
+	   		<p class="ft">Back-end</p>
+	   	</div>
+	   	<div class="text">
+	   		Back-end - простими словами, частина веб сторінки, яку не видно звичайному відвідувачу сайту. Робота з серверами, обмін данними та інше - це профіль бекенд розробників. Без мов програмуваня бекенд створення якісного інтернет-магазину неможливе.
+	   		<p>Наші розробники можуть написати повноцінний інтернет-магазин мовою Python</p>
+	   	</div>
+	   </div>
+	<div class="footer">
+		<div class="f1">
+			<h3 id="cntcts">Контакти</h3>
+			<p class="pfoot">Номер телефону: +38 096-(221)-92-38</p>
+			<p class="pfoot">Email: trident.it.ua@gmail.com</p>
+			<div class="social">
+				<a href=""><img src="inst.png" width="70" class="instimg"></a>
+			</div>
+
+		</div>
+		<div class="f2">© 2022 TRIDENT IT</div>
+		<div class="f3"></div>
+	</div>
+	<div class="vidget"><p class="vidgetp">Замовити послуги</p><img src="vidgetimg.png" class="vidgetimg" id="Btn" width="70"></div>
+	</div>
+	<script src="script_other.js"></script>
+	<script src="script_form.js"></script>
+</body>
+</html>
