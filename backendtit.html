@@ -300,7 +300,6 @@
 		padding: 10px 5px 10px 5px;
 		background-color: rgba(0, 0, 0, 0.5);
 	}
-
 	/* Пк */
 	@media screen and (min-width: 1200px) and (max-width: 1440px) {
 
@@ -315,10 +314,10 @@
 		.pages{
 			margin-left: 0px;
 		}
-	}
+		}
 
-	/* Планшеты и ноуты */
-	@media screen and (min-width: 992px) and (max-width: 1199px) {
+		/* Планшеты и ноуты */
+		@media screen and (min-width: 992px) and (max-width: 1199px) {
 
 		.header{
 			justify-content: space-between;
@@ -335,6 +334,14 @@
 
 		.home, .whyus, .price, .contacts{
 			margin-right: 20px;
+		}
+
+		.image{
+			width: 395px;
+		}
+
+		.f2{
+			width: 179px;
 		}
 
 	}
@@ -363,6 +370,23 @@
 
 		.home, .whyus, .price, .contacts{
 			margin-right: 15px;
+		}
+
+		.pg1{
+			margin-bottom: 10px;
+		}
+
+		.image{
+			width: 395px;
+		}
+
+		.text{
+			width: 425px;
+			margin-right: 10px;
+		}
+
+		.f2{
+			display: none;
 		}
 
 	}
@@ -396,6 +420,35 @@
 			margin-right: 15px;
 		}
 
+		.pg1{
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.image{
+			margin: 0px;
+			width: 450px;
+		}
+
+		.text{
+			width: 425px;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+
+		.footer{
+			flex-direction: column;
+		}
+
+		.f1, .f3{
+			margin-left: 0px;
+		}
+
+		.f2{
+			display: none;
+		}
+
+
 	}
 
 	/* Телефоны по-меньше */
@@ -404,28 +457,55 @@
 		.header{
 			justify-content: space-between;
 		}
-
-
+	
 		.logoimg{
 			max-width: 127px;
 			min-width: 127px;
 			margin-top: 53px;
 		}
-
+	
 		.lang{
-			margin-left: 78px;
+			margin-left: 65px;
 		}
-
+	
 		#ua, #eng, .home, .whyus, .price, .contacts{
 			font-size: 14px;
 		}
-
+	
 		.pages{
-			margin-left: 86px;
+			margin-left: 45px;
 		}
-
+	
 		.home, .whyus, .price, .contacts{
 			margin-right: 15px;
+		}
+	
+		.pg1{
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+	
+		.image{
+			margin: 0px;
+			width: 450px;
+		}
+	
+		.text{
+			width: 425px;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+	
+		.footer{
+			flex-direction: column;
+		}
+	
+		.f1, .f3{
+			margin-left: 0px;
+		}
+	
+		.f2{
+			display: none;
 		}
 
 	}
@@ -528,3 +608,4 @@
 	<script src="script_form.js"></script>
 </body>
 </html>
+
