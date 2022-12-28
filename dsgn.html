@@ -337,6 +337,14 @@
 			margin-right: 20px;
 		}
 
+		.image{
+			width: 395px;
+		}
+
+		.f2{
+			width: 179px;
+		}
+
 	}
 
 	/* Планшеты и мини-ноуты */
@@ -365,6 +373,23 @@
 			margin-right: 15px;
 		}
 
+		.pg1{
+			margin-bottom: 10px;
+		}
+
+		.image{
+			width: 395px;
+		}
+
+		.text{
+			width: 425px;
+			margin-right: 10px;
+		}
+
+		.f2{
+			display: none;
+		}
+
 	}
 
 	/* Планшеты и большие телефоны */
@@ -373,39 +398,66 @@
 		.header{
 			justify-content: space-between;
 		}
-	
-	
+
 		.logoimg{
 			max-width: 127px;
 			min-width: 127px;
 			margin-top: 53px;
 		}
-	
+
 		.lang{
 			margin-left: 65px;
 		}
-	
+
 		#ua, #eng, .home, .whyus, .price, .contacts{
 			font-size: 14px;
 		}
-	
+
 		.pages{
 			margin-left: 45px;
 		}
-	
+
 		.home, .whyus, .price, .contacts{
 			margin-right: 15px;
 		}
+
+		.pg1{
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.image{
+			margin: 0px;
+			width: 450px;
+		}
+
+		.text{
+			width: 425px;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+
+		.footer{
+			flex-direction: column;
+		}
+
+		.f1, .f3{
+			margin-left: 0px;
+		}
+
+		.f2{
+			display: none;
+		}
+
 
 	}
 
 	/* Телефоны по-меньше */
 	@media screen and (max-width: 454px) {
-
+		
 		.header{
 			justify-content: space-between;
 		}
-
 
 		.logoimg{
 			max-width: 127px;
@@ -414,7 +466,7 @@
 		}
 
 		.lang{
-			margin-left: 78px;
+			margin-left: 65px;
 		}
 
 		#ua, #eng, .home, .whyus, .price, .contacts{
@@ -422,11 +474,39 @@
 		}
 
 		.pages{
-			margin-left: 86px;
+			margin-left: 45px;
 		}
 
 		.home, .whyus, .price, .contacts{
 			margin-right: 15px;
+		}
+
+		.pg1{
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+
+		.image{
+			margin: 0px;
+			width: 450px;
+		}
+
+		.text{
+			width: 425px;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+
+		.footer{
+			flex-direction: column;
+		}
+
+		.f1, .f3{
+			margin-left: 0px;
+		}
+
+		.f2{
+			display: none;
 		}
 
 	}
